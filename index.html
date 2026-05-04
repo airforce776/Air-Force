@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>AIR FORCE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>WING AIR FORCE | القيادة الجوية</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Tahoma", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #020617;
+      color: #e5e7eb;
+    }
+    a { color: #38bdf8; text-decoration: none; }
+
+    header {
+      background: radial-gradient(circle at top, #1e3a8a 0, #020617 55%);
+      padding: 30px 20px 40px;
+      border-bottom: 1px solid #1f2937;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.2rem;
+      letter-spacing: 1px;
+      color: #e5e7eb;
+    }
+    header p {
+      margin: 6px 0 0;
+      color: #cbd5f5;
+      font-size: 0.95rem;
+    }
+    .logo-badge {
+      margin-top: 10px;
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 999px;
+      border: 1px solid #38bdf8;
+      font-size: 0.8rem;
+      color: #e0f2fe;
+      background: rgba(15,23,42,0.8);
+    }
+
+    nav {
+      background: #020617;
+      border-bottom: 1px solid #111827;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 12px;
+    }
+    nav a {
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: #020617;
+      border: 1px solid #1f2937;
+      font-size: 0.85rem;
+      transition: 0.2s;
+    }
+    nav a:hover {
+      background: #1f2937;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 22px auto 40px;
+      padding: 0 12px;
+    }
+    section {
+      background: #020617;
+      border-radius: 14px;
+      border: 1px solid #111827;
+      padding: 16px 16px 18px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+      margin-bottom: 18px;
+    }
+    section h2 {
+      margin: 0 0 8px;
+      font-size: 1.3rem;
+      border-right: 4px solid #38bdf8;
+      padding-right: 8px;
+      display: inline-block;
+    }
+    section p {
+      margin: 6px 0;
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: #e5e7eb;
+    }
+    .sub-title {
+      margin-top: 10px;
+      margin-bottom: 4px;
+      font-weight: bold;
+      font-size: 0.9rem;
+      color: #93c5fd;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 4px 0 0;
+    }
+    li {
+      font-size: 0.9rem;
+      padding: 3px 0;
+      color: #e5e7eb;
+    }
+    .note {
+      font-size: 0.8rem;
+      color: #9ca3af;
+      margin-top: 6px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 16px;
+    }
+    @media (max-width: 900px) {
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+
+    .card {
+      background: #020617;
+      border-radius: 12px;
+      border: 1px solid #1f2937;
+      padding: 10px 12px;
+      margin-top: 8px;
+    }
+    .card-title {
+      font-size: 0.9rem;
+      font-weight: bold;
+      color: #facc15;
+      margin-bottom: 4px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      font-size: 0.85rem;
+    }
+    th, td {
+      border: 1px solid #1f2937;
+      padding: 5px 6px;
+      text-align: center;
+    }
+    thead tr {
+      background: #020617;
+    }
+
+    .form-group {
+      margin-bottom: 8px;
+    }
+    label {
+      display: block;
+      font-size: 0.85rem;
+      margin-bottom: 3px;
+      color: #cbd5f5;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 6px 8px;
+      border-radius: 8px;
+      border: 1px solid #1f2937;
+      background: #020617;
+      color: #e5e7eb;
+      font-size: 0.85rem;
+    }
+    textarea { resize: vertical; min-height: 60px; }
+    button {
+      margin-top: 6px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      border: 1px solid #38bdf8;
+      background: #0f172a;
+      color: #e0f2fe;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    button:hover {
+      background: #1d4ed8;
+      border-color: #60a5fa;
+    }
+
+    footer {
+      text-align: center;
+      padding: 16px 10px 22px;
+      font-size: 0.8rem;
+      color: #6b7280;
+      border-top: 1px solid #111827;
+      background: #020617;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>WING AIR FORCE</h1>
+    <p>القيادة الجوية الرسمية للطيران العسكري الافتراضي</p>
+    <div class="logo-badge">نظام رتب – مهام – قيادة – طيارين</div>
+  </header>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="#intro">التقديم</a>
+      <a href="#leadership">القيادة</a>
+      <a href="#rules">القوانين</a>
+      <a href="#ranks">الرتب</a>
+      <a href="#missions">المهام</a>
+      <a href="#register">تسجيل طيار</a>
+      <a href="#members">سجل الطيارين</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- التقديم + لمحة سريعة -->
+    <section id="intro">
+      <div class="grid-2">
+        <div>
+          <h2>التقديم</h2>
+          <p>
+            مرحباً بكم في <strong>WING AIR FORCE</strong>، نظام الطيران العسكري الافتراضي
+            الذي ينظم الرتب، القيادة، المهام، وسجل الطيارين في بيئة تحاكي الواقع العسكري
+            من حيث الانضباط، التسلسل القيادي، والمسؤولية الجوية.
+          </p>
+          <p>
+            هذا الموقع يمثل الواجهة الرسمية للسرب، ويمكن استخدامه كمرجع للقيادة والأعضاء
+            والطيارين الجدد.
+          </p>
+        </div>
+        <div>
+          <div class="card">
+            <div class="card-title">ملخص سريع</div>
+            <ul>
+              <li>👑 قيادة عليا للطيران</li>
+              <li>⭐ ضباط طيران معتمدون</li>
+              <li>🛦 طيارون نخبة وميدانيون</li>
+              <li>🚁 جنود جويون بمختلف الدرجات</li>
+            </ul>
+            <p class="note">WING AIR FORCE — تنظيم كامل للرتب والمهام.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- القيادة -->
+    <section id="leadership">
+      <h2>القيادة العليا</h2>
+      <div class="grid-2">
+        <div>
+          <div class="card">
+            <div class="card-title">👑⚔️ القيادة العليا</div>
+            <ul>
+              <li>👑⚔️ Aviation Command Chief — أعلى سلطة قيادية في السرب.</li>
+              <li>👑⚔️ Aviation Chief — مسؤول عن إدارة العمليات الجوية العليا.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="card-title">👑🚀 القيادة الجوية</div>
+            <ul>
+              <li>👑🚀 Aviation Marshal — قيادة الجناح الجوي.</li>
+              <li>👑🚀 Wing Commander — مسؤول عن الأجنحة والتشكيلات.</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <p class="sub-title">أمثلة من القيادة (من أعضائك):</p>
+          <ul>
+            <li>! 🔰EREN — 👑⚔️ Aviation Command Chief</li>
+            <li>! ⭐💂🏻𝑨𝒆 l FAHAD l 450 — 👑🚀 Aviation Marshal</li>
+            <li>! ⭐💂🏻𝑨𝒆 l BOSS l 48 — ⭐️🛦 Aviation Commander</li>
+          </ul>
+          <p class="note">يمكن لاحقاً إضافة صور أو تعريف مفصل لكل قائد.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- القوانين -->
+    <section id="rules">
+      <h2>القوانين العامة</h2>
+      <div class="sub-title">1) الانضباط العسكري</div>
+      <ul>
+        <li>احترام الرتب والتسلسل القيادي في جميع الأوقات.</li>
+        <li>تنفيذ الأوامر الصادرة من القيادة أثناء المهام دون جدال.</li>
+      </ul>
+
+      <div class="sub-title">2) السلوك العام</div>
+      <ul>
+        <li>منع الإساءة أو الاستفزاز أو التقليل من أي عضو.</li>
+        <li>الالتزام بالأخلاق العسكرية في الحديث والتعامل.</li>
+      </ul>
+
+      <div class="sub-title">3) المهام والتدريب</div>
+      <ul>
+        <li>الالتزام بمواعيد المهمات والتدريبات المحددة.</li>
+        <li>اتباع خطط الطيران والتعليمات الجوية بدقة.</li>
+      </ul>
+
+      <div class="sub-title">4) العقوبات</div>
+      <ul>
+        <li>إنذار شفهي.</li>
+        <li>إنذار كتابي.</li>
+        <li>إيقاف مؤقت عن المهام.</li>
+        <li>فصل نهائي حسب تقدير القيادة.</li>
+      </ul>
+    </section>
+
+    <!-- الرتب -->
+    <section id="ranks">
+      <h2>نظام الرتب</h2>
+      <div class="grid-2">
+        <div>
+          <div class="card">
+            <div class="card-title">القيادة العليا</div>
+            <ul>
+              <li>👑⚔️ Aviation Command Chief — القيادة العليا للسرب.</li>
+              <li>👑⚔️ Aviation Chief — إدارة العمليات الجوية.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="card-title">القيادة الجوية</div>
+            <ul>
+              <li>👑🚀 Aviation Marshal — قيادة الجناح الجوي.</li>
+              <li>👑🚀 Wing Commander — قيادة الأجنحة والتشكيلات.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="card-title">ضباط الطيران</div>
+            <ul>
+              <li>⭐️🛦 Aviation Commander — قيادة السرب.</li>
+              <li>⭐️🛦 Aviation Officer — ضابط عمليات وتدريب.</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div class="card">
+            <div class="card-title">الطيارون</div>
+            <ul>
+              <li>🛦 Senior Airman — طيار متقدم.</li>
+              <li>🛦 Elite Airman — طيار نخبة.</li>
+              <li>🚁 Airman 1st class — جندي جوي متقدم.</li>
+              <li>🚁 Airman 2nd class — جندي جوي متوسط.</li>
+              <li>🚁 Airman 3rd class — جندي جوي مبتدئ.</li>
+              <li>✅ Junior Airman — مبتدئ تحت التدريب.</li>
+            </ul>
+          </div>
+          <p class="note">يمكن ربط كل رتبة بصلاحيات داخلية (قيادة، تدريب، مهام خاصة...).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- المهام المتقدمة -->
+    <section id="missions">
+      <h2>المهام الجوية ونظام النقاط</h2>
+      <p>يمكن استخدام هذا القسم كنظام بسيط لتقييم الطيارين حسب نوع المهمة:</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>نوع المهمة</th>
+            <th>الوصف</th>
+            <th>النقاط المقترحة</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>مهمة قتالية</td>
+            <td>اشتباك جوي مع أهداف معادية ضمن منطقة محددة.</td>
+            <td>50 نقطة</td>
+          </tr>
+          <tr>
+            <td>مهمة دفاع جوي</td>
+            <td>حماية منطقة أو هدف استراتيجي من هجمات جوية.</td>
+            <td>40 نقطة</td>
+          </tr>
+          <tr>
+            <td>مهمة تدريب تكتيكي</td>
+            <td>تدريب على المناورات والتشكيلات والاشتباك القريب.</td>
+            <td>30 نقطة</td>
+          </tr>
+          <tr>
+            <td>مهمة استطلاع</td>
+            <td>استكشاف منطقة وتحديد الأهداف أو التهديدات.</td>
+            <td>20 نقطة</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="note">يمكنك لاحقاً ربط النقاط بالترقيات أو الأوسمة.</p>
+    </section>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>WING AIR FORCE | القيادة الجوية</title>
+
+<style>
+/* ————————————————————————
+   تنسيقات الموقع الأساسية
+———————————————————————— */
+body {
+  margin: 0;
+  font-family: Tahoma, sans-serif;
+  background: #020617;
+  color: #e5e7eb;
+}
+section {
+  background: #020617;
+  border: 1px solid #111827;
+  padding: 16px;
+  border-radius: 12px;
+  margin: 20px auto;
+  max-width: 1100px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+th, td {
+  border: 1px solid #1f2937;
+  padding: 6px;
+  text-align: center;
+}
+button {
+  padding: 7px 14px;
+  border-radius: 8px;
+  border: 1px solid #38bdf8;
+  background: #0f172a;
+  color: #e0f2fe;
+  cursor: pointer;
+}
+button:hover {
+  background: #1d4ed8;
+}
+input, select, textarea {
+  width: 100%;
+  padding: 6px;
+  border-radius: 8px;
+  border: 1px solid #1f2937;
+  background: #020617;
+  color: #e5e7eb;
+}
+.action-icon {
+  cursor: pointer;
+  font-size: 18px;
+  padding: 4px;
+}
+.disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+</style>
+</head>
+
+<body>
+
+<!-- ————————————————————————
+     تسجيل طيار جديد
+———————————————————————— -->
+<section id="register">
+<h2>تسجيل طيار جديد</h2>
+
+<label>اسم الطيار</label>
+<input id="name">
+
+<label>الآيدي</label>
+<input id="id">
+
+<label>الرتبة</label>
+<select id="rank">
+  <option>🚁 Airman 3rd class</option>
+  <option>🚁 Airman 2nd class</option>
+  <option>🚁 Airman 1st class</option>
+  <option>🛦 Elite Airman</option>
+ 
+</select>
+
+<label>ملاحظات</label>
+<textarea id="notes"></textarea>
+
+<button id="save">تسجيل</button>
+<button id="clearNew" style="background:#7f1d1d;border-color:#dc2626;margin-right:10px">مسح سجل الجدد</button>
+
+</section>
+
+<!-- ————————————————————————
+     البحث
+———————————————————————— -->
+<section>
+<h2>بحث</h2>
+<input id="search" placeholder="ابحث بالاسم أو الرتبة أو ID">
+</section>
+
+<!-- ————————————————————————
+     جدول الطيارين
+———————————————————————— -->
+<section id="members">
+<h2>سجل الطيارين</h2>
+
+<table>
+<thead>
+<tr>
+  <th>الاسم</th>
+  <th>الرتبة</th>
+  <th>ID</th>
+  <th>ملاحظات</th>
+  <th>تحكم</th>
+</tr>
+</thead>
+
+<tbody id="pilotTable">
+
+<!-- ————————————————————————
+     الطيارين الأساسيين (ثابتين)
+———————————————————————— -->
+<tr data-fixed="1">
+  <td>! 🔰EREN</td>
+  <td>👑⚔️ Aviation Command Chief</td>
+  <td>—</td>
+  <td>قائد الطيران</td>
+  <td>
+    <span class="action-icon disabled">✏️</span>
+    <span class="action-icon disabled">🗑️</span>
+  </td>
+</tr>
+
+<tr data-fixed="1">
+  <td>! ⭐💂🏻𝑨𝒆 l 𝐅𝐀𝐇𝐀𝐃 l 450</td>
+  <td>👑🚀 Aviation Marshal</td>
+  <td>450</td>
+  <td></td>
+  <td>
+    <span class="action-icon disabled">✏️</span>
+    <span class="action-icon disabled">🗑️</span>
+  </td>
+</tr>
+
+<!-- (تقدر تضيف باقي الطيارين الأساسيين هنا بنفس الشكل) -->
+
+</tbody>
+</table>
+</section>
+
+<!-- ————————————————————————
+     السكربت الكامل
+———————————————————————— -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+const saveBtn = document.getElementById("save");
+const clearBtn = document.getElementById("clearNew");
+const table = document.getElementById("pilotTable");
+const search = document.getElementById("search");
+
+let pilots = JSON.parse(localStorage.getItem("newPilots")) || [];
+
+/* ————————————————————————
+   عرض الطيارين الجدد
+———————————————————————— */
+function render() {
+  document.querySelectorAll("tr[data-new='1']").forEach(e => e.remove());
+
+  pilots.forEach((p, index) => {
+    const row = document.createElement("tr");
+    row.setAttribute("data-new", "1");
+
+    row.innerHTML = `
+      <td>${p.name}</td>
+      <td>${p.rank}</td>
+      <td>${p.id}</td>
+      <td>${p.notes}</td>
+      <td>
+        <span class="action-icon edit" data-index="${index}">✏️</span>
+        <span class="action-icon delete" data-index="${index}">🗑️</span>
+      </td>
+    `;
+
+    table.appendChild(row);
+  });
+}
+
+render();
+
+/* ————————————————————————
+   تسجيل طيار جديد
+———————————————————————— */
+saveBtn.onclick = () => {
+  const name = document.getElementById("name").value;
+  const id = document.getElementById("id").value;
+  const rank = document.getElementById("rank").value;
+  const notes = document.getElementById("notes").value;
+
+  if (!name || !id) {
+    alert("الرجاء تعبئة الاسم والآيدي");
+    return;
+  }
+
+  pilots.push({ name, id, rank, notes });
+  localStorage.setItem("newPilots", JSON.stringify(pilots));
+
+  render();
+
+  alert("تم تسجيل الطيار بنجاح");
+
+  document.getElementById("name").value = "";
+  document.getElementById("id").value = "";
+  document.getElementById("notes").value = "";
+};
+
+/* ————————————————————————
+   تعديل طيار
+———————————————————————— */
+document.addEventListener("click", e => {
+  if (e.target.classList.contains("edit")) {
+    const i = e.target.dataset.index;
+    const p = pilots[i];
+
+    const newName = prompt("تعديل الاسم:", p.name);
+    if (!newName) return;
+
+    const newRank = prompt("تعديل الرتبة:", p.rank);
+    if (!newRank) return;
+
+    const newNotes = prompt("تعديل الملاحظات:", p.notes);
+
+    pilots[i] = { ...p, name: newName, rank: newRank, notes: newNotes };
+    localStorage.setItem("newPilots", JSON.stringify(pilots));
+    render();
+  }
+});
+
+/* ————————————————————————
+   حذف طيار
+———————————————————————— */
+document.addEventListener("click", e => {
+  if (e.target.classList.contains("delete")) {
+    const i = e.target.dataset.index;
+    if (confirm("هل تريد حذف هذا الطيار؟")) {
+      pilots.splice(i, 1);
+      localStorage.setItem("newPilots", JSON.stringify(pilots));
+      render();
+    }
+  }
+});
+
+/* ————————————————————————
+   مسح سجل الجدد
+———————————————————————— */
+clearBtn.onclick = () => {
+  if (confirm("مسح جميع الطيارين الجدد؟")) {
+    pilots = [];
+    localStorage.setItem("newPilots", JSON.stringify([]));
+    render();
+  }
+};
+
+/* ————————————————————————
+   البحث
+———————————————————————— */
+search.oninput = () => {
+  const value = search.value.trim();
+
+  document.querySelectorAll("#pilotTable tr").forEach(row => {
+    const text = row.innerText;
+    row.style.display = text.includes(value) ? "" : "none";
+  });
+};
+
+});
+</script>
+
+</body>
+</html>
+  <footer>
+    &copy; AIR FORCE — صنع من قبل القصيمي.
+  </footer>
+
+</body>
+</html>
+    
+  </body>
+  
+</html>
