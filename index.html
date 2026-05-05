@@ -1487,24 +1487,7 @@ search.oninput = () => {
     <p class="note">يصدر النظام تنبيه تلقائي للقيادة عند تكرار المخالفة.</p>
   </div>
 
-  <!-- واجهة محادثة AI -->
-  <div class="card">
-    <div class="card-title">🤖 واجهة محادثة AIR FORCE AI (نسخة متقدمة)</div>
-    <form onsubmit="return false;">
-      <div class="form-group">
-        <label>اكتب استفسارك للذكاء الاصطناعي</label>
-        <textarea placeholder="مثال: ما هي مهامي كـ Airman 1st class؟"></textarea>
-      </div>
-      <button type="button">تشغيل AIR FORCE AI</button>
-    </form>
-
-    <div style="margin-top:10px; padding:10px; border:1px solid #1f2937; border-radius:8px;">
-      <strong>📡 مخرجات النظام (محاكاة):</strong>
-      <p style="font-size:0.85rem; color:#9ca3af;">
-        سيتم هنا عرض رد الذكاء الاصطناعي بشكل يشبه الأنظمة العسكرية الحقيقية.
-      </p>
-    </div>
-  </div>
+  
 
   <!-- نظام الترقية الذكي -->
   <div class="card">
@@ -1517,7 +1500,61 @@ search.oninput = () => {
     </ul>
   </div>
 
+
+    الإصدار المتقدم من نظام الذكاء الاصطناعي الخاص بالقيادة الجوية.  
+    يقوم بتحليل بيانات الطيارين، متابعة المهام، تقديم توصيات للترقيات،
+    واكتشاف المخالفات بشكل تلقائي.
+  </p>
+
+  <div class="card">
+    <div class="card-title">🤖 واجهة محادثة AIR FORCE AI (تفاعلية)</div>
+    <form id="aiForm">
+      <div class="form-group">
+        <label>اكتب استفسارك للذكاء الاصطناعي</label>
+        <textarea id="aiInput" placeholder="مثال: ما هي مهامي كـ Airman 1st class؟"></textarea>
+      </div>
+      <button type="submit">تشغيل AIR FORCE AI</button>
+    </form>
+
+    <div id="aiOutput" style="margin-top:10px; padding:10px; border:1px solid #1f2937; border-radius:8px;">
+      <strong>📡 الردود:</strong>
+      <p id="aiResponse" style="font-size:0.85rem; color:#9ca3af;">سيتم هنا عرض رد الذكاء الاصطناعي...</p>
+    </div>
+  </div>
 </section>
+
+<script>
+  // نظام محاكاة الذكاء الاصطناعي
+  const aiForm = document.getElementById("aiForm");
+  const aiInput = document.getElementById("aiInput");
+  const aiResponse = document.getElementById("aiResponse");
+
+  aiForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const query = aiInput.value.trim();
+
+    if (!query) {
+      aiResponse.textContent = "⚠️ الرجاء كتابة استفسار أولاً.";
+      return;
+    }
+
+    // محاكاة ردود الذكاء الاصطناعي العسكرية
+    let reply = "";
+    if (query.includes("مهامي") || query.includes("Airman 3rd")) {
+      reply = "📋 مهامك تشمل إرسال 10 صور أسبوعياً، تنفيذ استطلاع جوي واحد، وحضور تدريب واحد.";
+    } else if (query.includes("Airman 2nd")) {
+      reply = "📋 مهامك: 20 صورة، استطلاعين جويين، تدريب أسبوعي، وحماية المواكب العسكرية.";
+    } else if (query.includes("Elite")) {
+      reply = "🛦 مهام النخبة: 3 استطلاعات، سيطرة على الخط السريع مرتين، وتحرير مركبات عسكرية.";
+    } else if (query.includes("ترقية") || query.includes("اختبار")) {
+      reply = "🎖️ يمكنك التقدم لاختبار Elite بعد إتمام جميع المهام خلال أسبوعين من الترقية.";
+    } else {
+      reply = "🤖 النظام: لم يتم التعرف على الاستفسار، يرجى استخدام كلمات مثل 'مهامي' أو 'ترقية'.";
+    }
+
+    aiResponse.textContent = reply;
+  });
+</script>
 
 </body>
 </html>
@@ -1529,7 +1566,5 @@ search.oninput = () => {
 </html>
     
   </body>
-  
-</html>
   
 </html>
