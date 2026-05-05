@@ -1555,6 +1555,102 @@ search.oninput = () => {
     aiResponse.textContent = reply;
   });
 </script>
+<!-- نظام الأوسمة العسكرية -->
+<section id="medals">
+  <h2>🏅 نظام الأوسمة الجوية</h2>
+  <p>
+    نظام الأوسمة في <strong>WING AIR FORCE</strong> يهدف لتكريم الطيارين المتميزين
+    بناءً على أدائهم، التزامهم، وإنجازاتهم في المهام الجوية.
+  </p>
+
+  <div class="card">
+    <div class="card-title">🎖️ أنواع الأوسمة</div>
+    <table>
+      <thead>
+        <tr>
+          <th>اسم الوسام</th>
+          <th>الوصف</th>
+          <th>المعايير</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>وسام الشجاعة الجوية</td>
+          <td>يُمنح للطيار الذي أظهر شجاعة استثنائية أثناء المهام القتالية أو الدفاعية.</td>
+          <td>إتمام 3 مهام قتالية بنجاح دون أخطاء.</td>
+        </tr>
+        <tr>
+          <td>وسام الانضباط العسكري</td>
+          <td>يُمنح للطيار الملتزم بالحضور والانضباط في جميع التدريبات.</td>
+          <td>حضور جميع التدريبات لمدة شهر كامل.</td>
+        </tr>
+        <tr>
+          <td>وسام الاستطلاع الذهبي</td>
+          <td>يُمنح لمن نفذ أكبر عدد من الاستطلاعات الجوية بدقة.</td>
+          <td>10 استطلاعات ناجحة خلال شهر.</td>
+        </tr>
+        <tr>
+          <td>وسام القيادة الجوية</td>
+          <td>يُمنح للضباط الذين أداروا مهام متعددة بنجاح وحققوا نتائج عالية.</td>
+          <td>قيادة 5 مهام جماعية أو أكثر.</td>
+        </tr>
+        <tr>
+          <td>وسام النخبة</td>
+          <td>يُمنح لأعضاء رتبة <strong>Elite Airman</strong> بعد اجتياز اختبار النخبة.</td>
+          <td>إتمام جميع مهام النخبة خلال أسبوعين.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="card-title">🏆 منح الأوسمة</div>
+    <form id="medalForm">
+      <div class="form-group">
+        <label>اسم الطيار</label>
+        <input type="text" id="pilotName" placeholder="مثال: Ae l AlQASIMI l 768" />
+      </div>
+      <div class="form-group">
+        <label>اختر الوسام</label>
+        <select id="medalType">
+          <option>وسام الشجاعة الجوية</option>
+          <option>وسام الانضباط العسكري</option>
+          <option>وسام الاستطلاع الذهبي</option>
+          <option>وسام القيادة الجوية</option>
+          <option>وسام النخبة</option>
+        </select>
+      </div>
+      <button type="submit">منح الوسام</button>
+    </form>
+
+    <div id="medalOutput" style="margin-top:10px; padding:10px; border:1px solid #1f2937; border-radius:8px;">
+      <strong>📡 نتيجة النظام:</strong>
+      <p id="medalResponse" style="font-size:0.85rem; color:#9ca3af;">سيتم هنا عرض نتيجة منح الوسام...</p>
+    </div>
+  </div>
+</section>
+
+<script>
+  // نظام منح الأوسمة
+  const medalForm = document.getElementById("medalForm");
+  const pilotName = document.getElementById("pilotName");
+  const medalType = document.getElementById("medalType");
+  const medalResponse = document.getElementById("medalResponse");
+
+  medalForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const name = pilotName.value.trim();
+    const medal = medalType.value;
+
+    if (!name) {
+      medalResponse.textContent = "⚠️ الرجاء إدخال اسم الطيار أولاً.";
+      return;
+    }
+
+    medalResponse.textContent =
+      `🎖️ تم منح ${medal} إلى الطيار ${name}. سيتم تسجيل الوسام في قاعدة بيانات القيادة قريباً.`;
+  });
+</script>
 
 </body>
 </html>
