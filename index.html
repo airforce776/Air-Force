@@ -256,9 +256,9 @@
             <div class="card-title">ملخص سريع</div>
             <ul>
               <li>👑 قيادة عليا للطيران</li>
-              <li>⭐ ضباط طيران معتمدون</li>
-              <li>🛦 طيارون نخبة وميدانيون</li>
-              <li>🚁 جنود جويون بمختلف الدرجات</li>
+              <li>⭐ مسوولين الطيران</li>
+              <li>🛦 الطيارين النخبة</li>
+              <li>🚁 جنود الطيران</li>
             </ul>
             <p class="note"> AIR FORCE — تنظيم كامل للرتب والمهام.</p>
           </div>
@@ -287,6 +287,7 @@
           </div>
         </div>
         <div>
+        <div class="card">
           <p class="sub-title">القيادة:</p>
           <ul>
             <li>EREN — 👑⚔️ Aviation Command Chief</li>
@@ -350,7 +351,7 @@
 </ul>
           </div>
           <div class="card">
-            <div class="card-title">ضباط الطيران</div>
+            <div class="card-title">مسوولين الطيران</div>
             <ul>
               <li>⭐️🛦 Aviation Commander —مسوول المسوولين.</li>
               <li>⭐️🛦 Aviation Officer — مسوول عن جميع المحاسبات والتدريبات والاستطلاعات.</li>
@@ -359,7 +360,7 @@
         </div>
         <div>
           <div class="card">
-            <div class="card-title">الطيارون</div>
+            <div class="card-title">الطيارين</div>
             <ul>
               <li>🛦 Senior Airman — طيار نخبه .</li>
               <li>🛦 Elite Airman — طيار متقدم.</li>
@@ -369,7 +370,11 @@
               <li>✅ Junior Airman — القبول المبدئي في كتيبة الطيران .</li>
             </ul>
           </div>
-          <p class="note">لكل رتبه مهام خاصه يجب الالتزام فيها...).</p>
+<div class="card">
+            <div class="card-title">الرخص الجانبية</div>
+            <ul>
+              <li> ⭐️🚀╿𝐃𝐨𝐠 𝐅𝐢𝐠𝐡𝐭𝐞𝐫 </li>
+              <li> ⭐️🚀╿𝐀𝐢𝐫 𝐒𝐡𝐨𝐰  </li>
  </strong>        
 </div>
      </div>
@@ -473,17 +478,12 @@ input, select, textarea {
 
 </section>
 
-<!-- ————————————————————————
-     البحث
-———————————————————————— -->
-<section>
-<h2>بحث</h2>
-<input id="search" placeholder="ابحث بالاسم أو الرتبة أو ID">
-</section>
 
 <!-- ————————————————————————
      جدول الطيارين
 ———————————————————————— -->
+<section id="members">
+<h2>سجل الطيارين</h2>
 
 <table>
 <thead>
@@ -493,15 +493,13 @@ input, select, textarea {
   <th>ID</th>
   <th>ملاحظات</th>
  <th>تحكم</th> 
-<section id="members">
-
-
-
-
+ 
+  
 </tr>
 </thead>
 
 <tbody id="pilotTable">
+
 
 <!-- ————————————————————————
      الطيارين الأساسيين (ثابتين)
@@ -1178,7 +1176,7 @@ input, select, textarea {
 </tr>
 <!-- نظام التحذيرات -->
 <section id="warnings-system">
-  <h2>نظام التحذيرات وسجل الطيارين</h2>
+  <h2>نظام التحذيرات</h2>
   <p>يمكن للقيادة إضافة أو تعديل أو حذف التحذيرات لكل طيار بعد إدخال كلمة السر.</p>
 
   <div class="card">
@@ -1303,6 +1301,15 @@ input, select, textarea {
     }
   }
 </script>
+<!-- ————————————————————————
+     البحث
+———————————————————————— -->
+<section>
+<h2>بحث</h2>
+<input id="search" placeholder="ابحث بالاسم أو الرتبة أو ID">
+</section>
+
+
 <!-- (تقدر تضيف باقي الطيارين الأساسيين هنا بنفس الشكل) -->
 
 </tbody>
@@ -1413,9 +1420,8 @@ input, select, textarea {
       logList.appendChild(li);
     }
   }
+</script>
 
-
-  
 
 <!-- (تقدر تضيف باقي الطيارين الأساسيين هنا بنفس الشكل) -->
 
@@ -1712,13 +1718,13 @@ search.oninput = () => {
   </p>
 
   <div class="card">
-    <div class="card-title">🤖 واجهة محادثة AIR FORCE AI (تفاعلية)</div>
+    <div class="card-title">🤖 AIR FORCE AI</div>
     <form id="aiForm">
       <div class="form-group">
         <label>اكتب استفسارك للذكاء الاصطناعي</label>
         <textarea id="aiInput" placeholder="مثال: ما هي مهامي كـ Airman 1st class؟"></textarea>
       </div>
-      <button type="submit">تشغيل AIR FORCE AI</button>
+      <button type="submit"> AIR FORCE AI</button>
     </form>
 
     <div id="aiOutput" style="margin-top:10px; padding:10px; border:1px solid #1f2937; border-radius:8px;">
